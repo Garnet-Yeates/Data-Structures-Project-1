@@ -8,7 +8,7 @@ import java.util.Random;
  * or for it to be filled through the console by the person playing this game.
  * @author yeatesg, adamsc
  */
-public class NumberBag extends ArrayBag<Integer>
+public class NumberBag extends LinkedBag<Integer>
 {
 	private static final Random R = new Random();
 	
@@ -24,11 +24,12 @@ public class NumberBag extends ArrayBag<Integer>
 	 */
 	public NumberBag(String message, int capacity, boolean autoFill)
 	{
-		super(capacity);
-		
 		if (autoFill)
 		{
-			while (!isFull()) add(R.nextInt(10));
+			for (int i = 0; i < capacity; i++)
+			{
+				add(R.nextInt(10));
+			}
 		}
 		else
 		{

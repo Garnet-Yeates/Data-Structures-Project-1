@@ -13,7 +13,7 @@ public class GuessingGame
 	
 	public static void main(String[] args)
 	{
-		new GuessingGame(false);
+		new GuessingGame(true);
 	}
 	
 	/**
